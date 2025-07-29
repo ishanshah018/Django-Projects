@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>my roll number (here write your roll number)</h3>
+<h2>Student Page</h2>
+
+<form method="get" action="{% url 'search' %}">
+    <input type="text" name="name" placeholder="Search by name">
+    <input type="submit" value="search">
+</form>
+
+<h2>Show Data</h2>
+
+{% if nodata %}
+    <p>No Data</p>
+{% else %}
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Stud Name</th>
+        <th>Email</th>
+        <th>Result</th>
+        <th>Action</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.result }}</td>
+        <td><a href="{% url 'inform' student.id %}">Information</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
