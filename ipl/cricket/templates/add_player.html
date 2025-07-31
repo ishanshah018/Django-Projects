@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add a New Cricket Player</h2>
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Country</label>
+        <input type="text" name="country" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Batting Style</label>
+        <input type="text" name="batting_style" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Bowling Style</label>
+        <input type="text" name="bowling_style" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" name="age" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Runs Scored</label>
+        <input type="number" name="runs_scored" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Wickets Taken</label>
+        <input type="number" name="wickets_taken" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Add Player</button>
+</form>
+{% endblock %}

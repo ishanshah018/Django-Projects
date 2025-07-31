@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">All Cricket Players</h2>
+<div class="list-group">
+    {% for player in players %}
+        <a href="{% url 'player_detail' player.id %}" class="list-group-item list-group-item-action">
+            {{ player.name }}
+        </a>
+    {% empty %}
+        <p class="text-muted">No players found.</p>
+    {% endfor %}
+</div>
+{% endblock %}

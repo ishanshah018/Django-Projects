@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ player.name }}</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item"><strong>Country:</strong> {{ player.country }}</li>
+    <li class="list-group-item"><strong>Batting Style:</strong> {{ player.batting_style }}</li>
+    <li class="list-group-item"><strong>Bowling Style:</strong> {{ player.bowling_style }}</li>
+    <li class="list-group-item"><strong>Age:</strong> {{ player.age }}</li>
+    <li class="list-group-item"><strong>Runs Scored:</strong> {{ player.runs_scored }}</li>
+    <li class="list-group-item"><strong>Wickets Taken:</strong> {{ player.wickets_taken }}</li>
+</ul>
+<a href="/" class="btn btn-secondary mt-3">← Back to Home</a>
+{% endblock %}
