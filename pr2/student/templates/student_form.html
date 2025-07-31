@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Search</title>
+</head>
+<body>
+    <h2>Search Student by Roll Number</h2>
+
+    <form method="get">
+        <input type="text" name="roll_no" placeholder="Enter Roll Number" value="{{ roll_no }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if student %}
+        <h3>Student Found:</h3>
+        <p><strong>Roll Number:</strong> {{ student.roll_no }}</p>
+        <p><strong>Name:</strong> {{ student.name }}</p>
+    {% elif roll_no %}
+        <p style="color:red;">No student found with roll number "{{ roll_no }}".</p>
+    {% endif %}
+</body>
+</html>
